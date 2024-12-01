@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F5F5F5">
+
+    <!-- 标题栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFC107"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_recycle_bin"
+            android:contentDescription="Recycle Bin Icon" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="回收站"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 空列表提示 -->
+    <LinearLayout
+        android:id="@+id/empty_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/ic_empty_box"
+            android:tint="#BDBDBD"
+            android:contentDescription="Empty List Icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="回收站是空的"
+            android:textSize="16sp"
+            android:textColor="#888888" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/recycle_bin_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="已删除的笔记"
+        android:textSize="18sp"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="12dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp">
+
+        <!-- 笔记图标 -->
+        <ImageView
+            android:id="@+id/note_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="12dp"
+            android:src="@drawable/ic_note"
+            android:contentDescription="Note Icon" />
+
+        <!-- 笔记标题和内容 -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <!-- 笔记标题 -->
+            <TextView
+                android:id="@+id/note_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="1" />
+
+            <!-- 笔记内容 -->
+            <TextView
+                android:id="@+id/note_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Content"
+                android:textSize="14sp"
+                android:textColor="#666666"
+                android:ellipsize="end"
+                android:maxLines="2" />
+        </LinearLayout>
+
+        <!-- 删除图标 -->
+        <ImageView
+            android:id="@+id/delete_icon"
+            android:layout_width="36dp"
+            android:layout_height="31dp"
+            android:src="@drawable/ic_delete1" />
+
+        <!-- 恢复图标 -->
+        <ImageView
+            android:id="@+id/restore_icon"
+            android:layout_width="34dp"
+            android:layout_height="31dp"
+            android:src="@drawable/restore" />
+
+
+        <!-- 删除按钮 -->
+<!--        <ImageView-->
+<!--            android:id="@+id/delete_button"-->
+<!--            android:layout_width="24dp"-->
+<!--            android:layout_height="24dp"-->
+<!--            android:src="@drawable/ic_delete"-->
+<!--            android:tint="#FF0000"-->
+<!--            android:contentDescription="Delete Button"-->
+<!--            android:layout_gravity="end|top"-->
+<!--            android:layout_marginTop="-12dp"-->
+<!--            android:layout_marginEnd="-12dp" />-->
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="8dp" />
+
+</LinearLayout>
